@@ -1,6 +1,6 @@
 from automata.pda.npda import NPDA
 
-input_expression = 'id=((num+id)*(id/num)-num)$'
+input_expression = 'id=((num+id)*(id/num)-num)'
 
 npda = NPDA(
 
@@ -386,7 +386,7 @@ npda = NPDA(
     acceptance_mode='final_state'  # o modo de aceitação é quando atingir o estado final 'qAceita'
 )
 
-if npda.accepts_input(input_expression):
-    print('accepted')
+if npda.accepts_input(input_expression + "$"):    # "$" caractere que indica o fim da expressão de entrada
+    print(f"Expression {input_expression} : Accepted!")
 else:
-    print('rejected')
+    print(f"Expression {input_expression} : Rejected!")
