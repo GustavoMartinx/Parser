@@ -1,6 +1,12 @@
 from automata.pda.npda import NPDA
+from sys import argv, exit
 
-input_expression = 'id=((num+id)*(id/num)-num)'
+if(len(argv) != 2):
+    print("Please, insert a expression.")
+    exit()
+
+
+input_expression = argv[1]
 
 npda = NPDA(
 
